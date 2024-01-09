@@ -1,10 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const path = require("path");
 const upload = require("./middleware/upload");
 const app = express();
 const PORT = process.env.PORT || 3500;
 
 // middlewares
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
